@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+}
+
+/* CONTENEDOR PRINCIPAL DE INSTAFRONT */
+main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* SECCIÓN HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: span 5;
+  padding: 10px;
+  border: 0.4px solid #acacac80;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+/* ESTILOS DE TODOS LOS AVATAR DE USUARIO */
+.avatarUsuario {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+/* SECCIÓN HISTORIAS */
+.history {
+  height: 100px;
+  grid-column: span 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 0.4px solid #acacac80;
+  margin: 0 20px;
+  gap: 20px;
+}
+
+/* ESTILOS DE TODOS LOS AVATAR DE LAS HISTORIAS */
+.avatarHistorias {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+}
+
+/* SECCIÓN PUBLICACIONES */
+.publicacion {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0.4px solid #acacac80;
+  border-radius: 5px;
+  margin: 0 20px;
+}
+
+.encabezadoPublicacion {
+  grid-column: span 5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 0.4px solid #acacac80;
+}
+
+.ususarioPublicacion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imagenPublicacion {
+  width: 100%;
+  padding: 20px;
+}
+
+.barraIconos {
+  display: flex;
+  gap: 10px;
+}
+
+.piePublicacion {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.piePublicacion p {
+  font-size: 10px;
+  margin: 5px 0;
+}
+
+/* SECCIÓN FOOTER */
+footer {
+  grid-column: span 5;
+  background-color: #000000;
+  padding: 5px;
+  color: #f2f2f2;
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  /* CONTENEDOR PRINCIPAL DE INSTAFRONT */
+  main {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template: repeat(4, 1fr);
+  }
+
+  /* SECCIÓN HEADER */
+  header {
+    grid-column: span 12;
+    justify-content: space-around;
+  }
+
+  /* SECCIÓN HISTORIAS */
+  .history {
+    grid-column: span 7;
+    margin: 0 50px;
+  }
+
+  /* SECCIÓN PUBLICACIONES */
+  .publicacion {
+    grid-column: span 7;
+    grid-row: 3;
+    margin: 0 50px;
+  }
+
+  footer {
+    grid-column: span 12;
+    grid-row: 4;
+  }
+}
