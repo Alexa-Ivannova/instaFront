@@ -6,16 +6,23 @@
   font-size: 12px;
 }
 
+body{
+    background-color: #f4f4f4;
+}
+
 /* CONTENEDOR PRINCIPAL DE INSTAFRONT */
 main {
-  width: 100vw;
+    background-color: #ffffff;
+  max-width: 1250px;
+  min-height: 100vh;
   height: 100vh;
   margin: 0 auto;
   display: grid;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between;
+  align-items: center; */
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  position: relative;
 }
 
 /* SECCIÓN HEADER */
@@ -25,11 +32,20 @@ header {
   align-items: center;
   grid-column: span 5;
   padding: 10px;
-  border: 0.4px solid #acacac80;
+  border-bottom: 1px solid #acacac80;
 }
 
 h1 {
   font-size: 25px;
+}
+
+header input {
+    display: none;
+}
+
+/* ESTILOS DEL FEED */
+.contenedorFeed {
+grid-column: span 5;
 }
 
 /* ESTILOS DE TODOS LOS AVATAR DE USUARIO */
@@ -46,6 +62,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
   border-radius: 5px;
   border: 0.4px solid #acacac80;
   margin: 0 20px;
@@ -107,11 +124,18 @@ h1 {
   margin: 5px 0;
 }
 
+/* SECCIÓN SUGERENCIAS */
+.seccionSugerencias{
+    display: none;
+}
+
 /* SECCIÓN FOOTER */
 footer {
   grid-column: span 5;
   background-color: #000000;
   padding: 5px;
+  height: 28px;
+  width: 100%;
   color: #f2f2f2;
   text-align: center;
 }
@@ -120,30 +144,86 @@ footer {
   /* CONTENEDOR PRINCIPAL DE INSTAFRONT */
   main {
     grid-template-columns: repeat(12, 1fr);
-    grid-template: repeat(4, 1fr);
+    grid-template-rows: 90px auto 28px;
+    font-size: 18px;
   }
 
   /* SECCIÓN HEADER */
   header {
     grid-column: span 12;
+    height: 90px;
     justify-content: space-around;
   }
 
-  /* SECCIÓN HISTORIAS */
-  .history {
-    grid-column: span 7;
-    margin: 0 50px;
+  header input {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #acacac80;
+    width: 300px;
   }
 
-  /* SECCIÓN PUBLICACIONES */
-  .publicacion {
-    grid-column: span 7;
-    grid-row: 3;
-    margin: 0 50px;
+  /* ESTILOS DEL FEED */
+
+  .contenedorFeed {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .contenedorFeedPublicacion {
+    grid-column: 2 / 7;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 300px;
+    }
+
+    .imagenPublicacion{
+        width: 80%;
+    }
+
+  /* SECCIÓN SUGERENCIAS */
+  .seccionSugerencias{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    grid-column: 9 / 12;
+    height: 180px;
+  }
+
+  .seccionSugerencias >p{
+    margin-left: 10px;
+  }
+
+  .ususarioCambiar, .seccionUsuarioSugerencias{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+    justify-content: space-between;
+  }
+
+  .usuarioCambiarPerfil, .ususarioSugerencias {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .ususarioSugerencias {
+    font-size: 10px;
+  }
+
+  .ususarioSugerencias img{
+    width: 20px;
+    height: 20px;
   }
 
   footer {
     grid-column: span 12;
-    grid-row: 4;
+    position: absolute;
+    bottom: 0;
   }
 }
